@@ -1,0 +1,26 @@
+<!--Да се напише програма која проверува дали-->
+<!--дадена година која се вчитува од тастатура е-->
+<!--престапна или не и на екран печати соодветна-->
+<!--порака.-->
+<!--Пример: 1976, 2000, 2004, 2008, 2012...-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise02</title>
+</head>
+<body>
+<script>
+    var year = prompt("Enter the year:");
+    year = parseInt(year);
+    if (!isNaN(year)) {
+        if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
+            document.write("The year " + year + " is a leap year.");
+        } else
+            document.write("The year " + year + " is not a leap year.");
+    } else {
+        document.write("Not provided a whole number.")
+    }
+</script>
+</body>
+</html>
