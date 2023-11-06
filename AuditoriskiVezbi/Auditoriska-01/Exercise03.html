@@ -1,0 +1,51 @@
+<!--Од тастатура се внесуваат координати на една-->
+<!--точка. Да се напише програма со која ќе се-->
+<!--испечати на кој квадрант или оска припаѓа-->
+<!--внесената точка. Ако станува збор за точка која-->
+<!--лежи на координатниот почеток, да се испечати-->
+<!--соодветна порака.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise03</title>
+</head>
+<body>
+<script>
+    var X = prompt("X:")
+    var Y = prompt("Y:")
+    X = parseInt(X)
+    Y = parseInt(Y)
+    if (!isNaN(X) && !isNaN(Y)) {
+        if (X > 0) {
+            if (Y > 0) {
+                document.write("I-st quadrant.")
+            } else if (Y < 0) {
+                document.write("IV-th quadrant.")
+            } else {
+                document.write("Positive X axis.")
+            }
+        } else if (X < 0) {
+            if (Y > 0) {
+                document.write("II-nd quadrant.")
+            } else if (Y < 0) {
+                document.write("III-rd quadrant.")
+            } else {
+                document.write("Negative X axis.")
+            }
+        } else {
+            if (Y > 0) {
+                document.write("Positive Y axis.")
+            } else if (Y < 0) {
+                document.write("Negative Y axis.")
+            } else {
+                document.write("Origin.")
+            }
+        }
+    } else {
+        document.write("Whole number not provided.")
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!--Да се напише програма коjа броеви (внесени од-->
+<!--тастатура) ´ке го определи броjот на броеви што се-->
+<!--деливи со 3, при делењето со 3 имаат остаток 1,-->
+<!--односно 2. Броеви се внесуваат се додека корисникот-->
+<!--не внесе знак-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise05</title>
+</head>
+<body>
+<script>
+    var c1 = 0, c2 = 0, c3 = 0;
+    var x = prompt("Enter a number:");
+    x = parseInt(x);
+    while (!isNaN(x)) {
+        if (x % 3 == 0) {
+            c1 += 1;
+        } else if (x % 3 == 1) {
+            c2 += 1;
+        } else {
+            n3 += 1;
+        }
+        x = prompt("Enter a number:");
+        x = parseInt(x);
+    }
+    document.write("You've entered <strong>" + c1
+        + "</strong> numbers which have 0 remainder when divided by 3<br>");
+    document.write("You've entered <strong>" + c2
+        + "</strong> numbers which have 0 remainder when divided by 3<br>");
+    document.write("You've entered <strong>" + c3
+        + "</strong> numbers which have 0 remainder when divided by 3<br>");
+</script>
+</body>
+</html>

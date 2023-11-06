@@ -1,0 +1,29 @@
+<!--Да се напише програма за пресметување на y =-->
+<!--x^n за даден природен броj n, n >= 1 и реален-->
+<!--броj x-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise04</title>
+</head>
+<body>
+<script>
+    var x = prompt("Enter the base:");
+    var n = prompt("Enter the exponent:");
+    x = parseInt(x);
+    n = parseInt(n);
+    var cnt, y;
+    if (!isNaN(x) && !isNaN(n)) {
+        for (cnt = 1, y = x; cnt < n; cnt++) {
+            x *= y;
+        }
+        document.write(y + " ^ " + n + " = " + x);
+    } else {
+        document.write("You did not enter a whole number!")
+    }
+</script>
+</body>
+</html>

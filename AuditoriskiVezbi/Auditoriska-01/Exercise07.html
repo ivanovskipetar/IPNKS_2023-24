@@ -1,0 +1,27 @@
+<!--Да се напише програма коjа од непознат броj на цели-->
+<!--броеви кои се внесуваат од тастатура ќе го определи-->
+<!--броjот со максимална вредност. Програмата завршува-->
+<!--ако наместо броj се внесе знак што не е цифра-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var max = prompt("Enter a number:");
+    max = parseInt(max);
+    var x = max;
+    while (!isNaN(x)) {
+        if (x > max) {
+            max = x;
+        }
+        x = prompt("Enter a number:");
+        x = parseInt(x);
+    }
+    document.write("The maximum of the entered numbers is " + max);
+</script>
+</body>
+</html>
