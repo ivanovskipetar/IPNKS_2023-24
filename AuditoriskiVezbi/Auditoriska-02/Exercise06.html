@@ -1,0 +1,40 @@
+<!--Напишете ја функцијата getOptions() која ќе ги изброи и-->
+<!--испечати сите елементи од листата-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=utf-8/>
+    <style type="text/css">
+        body {
+            margin: 30px;
+        }
+    </style>
+    <title>Count and display items of a dropdown list</title>
+</head>
+<body>
+<form>
+    Select your favorite Color :
+    <select id="mySelect">
+        <option>Red</option>
+        <option>Green</option>
+        <option>Blue</option>
+        <option>White</option>
+    </select>
+    <input type="button" onclick="getOptions()" value="Count and Output all
+items">
+</form>
+<script>
+    function getOptions() {
+        var list = document.getElementById("mySelect");
+        var txt = "Number of items: ";
+        var i;
+        txt = txt + list.length;
+        for (i = 0; i < list.length; i++) {
+            txt = txt + "\n" + list.options[i].text;
+        }
+        console.log(txt)
+    }
+</script>
+</body>
+</html>

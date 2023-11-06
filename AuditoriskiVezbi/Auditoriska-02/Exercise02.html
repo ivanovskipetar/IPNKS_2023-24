@@ -1,0 +1,23 @@
+<!--Напишете ја функцијата background() која ќе ја постави црвена-->
+<!--позадина на параграфите-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise02</title>
+</head>
+<body>
+    <p>Paragraph 1</p>
+    <p>Paragraph 2</p>
+    <input type="button" value="Click to set paragraph background color" onclick="background()">
+<script>
+    function background(){
+        var elements = document.getElementsByTagName("p");
+        for(var i = 0;i<elements.length;i++){
+            elements[i].style.background = "green"
+        }
+    }
+</script>
+</body>
+</html>
