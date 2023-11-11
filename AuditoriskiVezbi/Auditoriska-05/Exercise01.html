@@ -1,0 +1,63 @@
+<!--Да се направи веб страница која содржи 3 текстуални полиња, паѓачка листа,-->
+<!--копче и едно оневозможено текстуално поле. Со внесување на податоците и-->
+<!--притискање на копчето се појавува дијалог каде треба да се потврдат податоци.-->
+<!--Ако се потврдат, во долното текстуално поле се испишува текстуална порака.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise01</title>
+    <style>
+        #message {
+            width: 265px;
+        }
+
+        label {
+            display: inline-block;
+            width: 100px;
+        }
+
+        div {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+<h1>Contact Form</h1>
+<div><label>First Name</label><input type="text" id="f_name"></div>
+<div><label>Last Name</label><input type="text" id="l_name"></div>
+<div><label>E-mail</label><input type="text" id="e_mail"></div>
+<div><label>Age</label>
+    <select id="age">
+        <option value="19">19</option>
+        <option value="20">20</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+        <option value="23">23</option>
+    </select>
+</div>
+<div>
+    <input type="button" id="btn" value="Send" onclick="send()">
+</div>
+<input type="text" disabled="disabled" id="message">
+<script>
+    function send() {
+        var f_name = document.getElementById('f_name').value;
+        var l_name = document.getElementById('l_name').value;
+        var email = document.getElementById('e_mail').value;
+        var age = document.getElementById('age').value;
+        if (f_name == "" || l_name == "" || email == "" || age == "") {
+            alert("All fields must be fullfiled");
+        } else {
+            var str = "Sir " + f_name + " " + l_name + ", are you sure?";
+            if (confirm(str)) {
+                this.document.getElementById('message').value = "The data is sent successfully"
+            } else {
+                alert("Your data is not sent")
+            }
+        }
+    }
+</script>
+</body>
+</html>

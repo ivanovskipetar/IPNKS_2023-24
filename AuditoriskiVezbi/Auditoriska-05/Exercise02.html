@@ -1,0 +1,103 @@
+<!--Да се направи веб страница за внесување на податоци за проекти во табела. -->
+<!--Во текстуални полиња се внесува името на авторот, проекто и цена на проектот. -->
+<!--При клик на копчето Add се проверува дали сите три полиња се пополенети (во спротивно се појавува порака)-->
+<!--и доколку се пополнети се додава нов запис во табелата, а полињата се ресетираат.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise01</title>
+    <style>
+        label {
+            width: 100px;
+            display: inline-block;
+        }
+
+        input[type=button] {
+            width: 265px;
+        }
+
+        div {
+            margin-bottom: 10px;
+        }
+
+        table, td, th {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+<h2>Projects details</h2>
+<div><label>Author</label><input id="author" type="text"></div>
+<div><label>Project</label><input id="project" type="text"></div>
+<div><label>Cost</label><input id="cost" type="text"></div>
+<div><input type="button" name="add" value="Add" onclick="addRow();"></div>
+<h2>Project list - Total cost: <span id="total">0</span></h2>
+<table id="projects">
+    <thead>
+    <th>Author</th>
+    <th>Project</th>
+    <th colspan="2">Cost</th>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+<script>
+    function addRow() {
+        let tableRef = document.getElementById("projects").getElementsByTagName("tbody")[0];
+
+        let author = document.getElementById("author").value;
+        let project = document.getElementById("project").value;
+        let cost = document.getElementById("cost").value;
+
+        if (author == "" || project == "" || cost == "") {
+            alert("All fields are required.");
+        } else {
+            let newRow = tableRef.insertRow(tableRef.rows.length);
+
+            let newCell0 = newRow.insertCell(0);
+            let newCell1 = newRow.insertCell(1);
+            let newCell2 = newRow.insertCell(2);
+            let newCell3 = newRow.insertCell(3);
+
+            let newText = document.createTextNode(author);
+            newCell0.appendChild(newText);
+            newText = document.createTextNode(project);
+            newCell1.appendChild(newText);
+            newText = document.createTextNode(cost);
+            newCell2.appendChild(newText);
+            newCell2.setAttribute('class', 'cost');
+
+            let btn = document.createElement("BUTTON");
+            let t = document.createTextNode("Remove");
+            btn.appendChild(t);
+            btn.setAttribute('onclick', 'removeRow(this)');
+            newCell3.appendChild(btn);
+
+
+            author = "";
+            project = "";
+            cost = "";
+            sumProjects();
+        }
+
+        function removeRow(ref) {
+            tr = ref.parentNode.parentNode;
+            tr.parentNode.removeChild(tr);
+            sumProjects();
+        }
+
+        function sumProjects() {
+            let costCells = document.getElementsByClassName('cost');
+            let sum = 0;
+            for (let i = 0; i < costCells.length; i++) {
+                sum += parseInt(costCells[i].innerHTML);
+            }
+            document.getElementById("total").innerHTML = sum;
+        }
+    }
+</script>
+</body>
+</html>
