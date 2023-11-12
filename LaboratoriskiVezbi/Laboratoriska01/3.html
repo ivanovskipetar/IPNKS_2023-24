@@ -1,0 +1,35 @@
+<!--Да се направи веб страница каде од тастатура (преку prompt) ќе се внесат 3 стрингови. -->
+<!--Програмата треба во alert прозорец да го испечати најдолгиот збор во рамките на сите 3 стрингови. -->
+<!--Пример Влез: Прва лабораториска вежба           -->
+<!--            Во оваа лабораторија е многу жешко           -->
+<!--            Надвор е убав ден -->
+<!--Излез: лабораториска-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let first_string = prompt("Enter the first string:");
+    let second_string = prompt("Enter the second string:");
+    let third_string = prompt("Enter the third string:");
+    let final_string = first_string + " " + second_string + " " + third_string;
+    let longest_word = findLongestWord(final_string);
+    alert(longest_word);
+
+    function findLongestWord(string) {
+        let longest = "";
+        let parts = string.split(" ");
+        parts.forEach(s => {
+            if (s.length > longest.length) {
+                longest = s;
+            }
+        });
+        return longest
+    }
+</script>
+</body>
+</html>

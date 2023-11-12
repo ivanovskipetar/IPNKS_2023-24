@@ -1,0 +1,45 @@
+<!--Да се направи веб страница во која ќе има 2 input полиња -->
+<!--(со објаснување што треба да се внесе во овие полиња) и едно копче Calculate, -->
+<!--за внесување на тежина (во килограми) и висина (во центиметри) на човек. -->
+<!--При клик на копчето Calculate, треба да се пресмета BMI на човекот и да се запише во alert прозорец. -->
+<!--Формула: BMI = kg/m2 (тежината во килограми поделена со висината во метри на квадрат.)-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        label {
+            display: inline-block;
+            width: 100px;
+        }
+
+        div {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+<div><label>Weight in KG:</label>
+    <input type="text" id="weight">
+</div>
+<div><label>Height in CM:</label>
+    <input type="text" id="height">
+</div>
+<div>
+    <input type="button" id="btn" value="Calculate" onclick="calculate()">
+</div>
+<script>
+    function calculate() {
+        let weight = document.getElementById('weight').value;
+        let height = document.getElementById('height').value;
+        weight = parseFloat(weight);
+        height = parseFloat(height);
+        let sqrt_cm = Math.pow(height, 2);
+        let sqrt_m = sqrt_cm / 10000;
+        alert(weight / sqrt_m);
+    }
+</script>
+</body>
+</html>
