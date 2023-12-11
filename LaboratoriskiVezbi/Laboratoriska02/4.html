@@ -1,0 +1,41 @@
+<!--Да се направи веб страница каде преку текстуални полиња (прикажани на сликата подолу) ќе се-->
+<!--внесат два комплексни броеви. Страницата ќе содржи и копче Add кое при клик ќе ги собери двата-->
+<!--комплексни броеви и резулатот ќе го запише во две текстуални полиња.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        input {
+            margin-right: 5px;
+            width: 50px;
+        }
+
+        div {
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+<div><input type="text" id="first-real"><input type="text" id="first-imaginary">i</div>
+<div><input type="text" id="second-real"><input type="text" id="second-imaginary">i</div>
+<input type="button" onclick="add()" value="Add"><br>
+<div><input type="text" id="final-real" readonly><input type="text" id="final-imaginary" readonly>i</div>
+<script>
+    function add() {
+        let first_real = document.getElementById("first-real").value;
+        let first_imaginary = document.getElementById("first-imaginary").value;
+        let second_real = document.getElementById("second-real").value;
+        let second_imaginary = document.getElementById("second-imaginary").value;
+        let final_real = document.getElementById("final-real");
+        let final_imaginary = document.getElementById("final-imaginary");
+        let num1 = parseInt(first_real) + parseInt(second_real);
+        let num2 = parseInt(first_imaginary) + parseInt(second_imaginary);
+        final_real.value = num1.toString();
+        final_imaginary.value = num2.toString();
+    }
+</script>
+</body>
+</html>
