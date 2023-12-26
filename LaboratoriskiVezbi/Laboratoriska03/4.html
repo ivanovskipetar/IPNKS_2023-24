@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4</title>
+</head>
+<body>
+<script>
+    let library = [
+        {
+            title: 'Rich Dad Poor Dad',
+            author: 'Robert T. Kiyosaki',
+            alreadyRead: true
+        },
+        {
+            title: 'Zero to One',
+            author: 'Peter Thiel',
+            alreadyRead: true
+        },
+        {
+            title: 'The 7 Habits of Highly Effective People',
+            author: 'Stephen Covey',
+            alreadyRead: false
+        },
+        {
+            title: 'Think and Grow Rich',
+            author: 'Napoleon Hill',
+            alreadyRead: false
+        },
+        {
+            title: 'The Hard Thing About Hard Things',
+            author: 'Ben Horowitz',
+            alreadyRead: true
+        }];
+
+    for (let i = 0; i < library.length; i++) {
+        let book = "\"" + library[i].title + "\"" + ' by ' + library[i].author + ".";
+        if (library[i].alreadyRead) {
+            console.log("\'You already read " + book);
+        } else {
+            console.log("\'You still need to read " + book);
+        }
+    }
+</script>
+</body>
+</html>

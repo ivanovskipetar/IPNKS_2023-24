@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3</title>
+</head>
+<body>
+<script>
+    function Circle(radius, height) {
+        this.radius = radius;
+        this.height = height;
+    }
+
+    Circle.prototype.volume = function () {
+        return Math.PI * Math.pow(this.radius, 2) * this.height;
+    }
+</script>
+</body>
+</html>

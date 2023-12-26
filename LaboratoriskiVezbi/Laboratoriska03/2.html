@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2</title>
+</head>
+<body>
+<script>
+    function remove_array_element(array, element) {
+        let arr = [...array]
+        const index = arr.indexOf(element);
+        if (index > -1) { // only splice array when item is found
+            arr.splice(index, 1); // 2nd parameter means remove one item only
+        }
+        return arr;
+    }
+
+    console.log(remove_array_element([2, 5, 9, 6], 5));
+</script>
+</body>
+</html>
