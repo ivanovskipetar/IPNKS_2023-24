@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div><label>Items:</label><input type="text" id="items"></div>
+<div>
+    <label>Type:</label>
+    <select id="type">
+        <option value="radio">Radio button</option>
+        <option value="checkbox">Checkbox</option>
+    </select>
+</div>
+<input type="button" value="Прикажи" onclick="show()">
+<div id="sect"></div>
+
+<script>
+    function show() {
+
+        let values = document.getElementById("items").value.split(",");
+        let type = document.getElementById("type").value;
+        let div = document.getElementById("sect");
+        div.innerHTML = "";
+        values.forEach(v => {
+            let el = document.createElement("input");
+            el.setAttribute("type", type);
+            div.append(el);
+            let label = document.createElement("label");
+            let label_text = document.createTextNode(v);
+            label.appendChild(label_text);
+            div.append(label)
+        })
+    }
+</script>
+</body>
+</html>

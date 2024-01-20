@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3</title>
+</head>
+<body>
+<h1>Промена на позадина</h1>
+<span><input type="radio" name="name" value="Color" id="color"><label>Color</label></span>
+<span><input type="radio" name="name" value="Image" id="image"><label>Image</label></span>
+<div><label>Value:</label><input type="text" id="value"></div>
+<input type="button" value="Промени" onclick="show()">
+
+<script>
+    function show() {
+        let value = document.getElementById("value").value;
+        if (document.getElementById("color").checked) {
+            document.body.style.backgroundColor = value;
+        } else if (document.getElementById("image").checked) {
+            console.log(value);
+            document.body.style.backgroundImage = "url('" + value + "')";
+        }
+    }
+</script>
+
+</body>
+</html>
